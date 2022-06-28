@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumatozer Chat App</title>
+    <script defer src="js/sio.js"></script>
+    <script defer src="js/client.js"></script>
+<style>
+    h1{
+    padding: 20px;
+    margin-top: 12px;
+    font-size: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.logo{
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+body {
+    text-align: center;
+    position: relative;
+    top: 32%; 
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+  }
+  @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.container{
+    max-width: 1500px;
+    border: 2px solid black;
+    margin: auto;
+    height: 70vh;
+    overflow-y: scroll;
+}
+.message{
+    background-color:cyan;
+    width: 24%;
+    padding: 10px;
+    margin: 17px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.left{
+    float:left;
+    clear: both;
+}
+.right{
+    float: right;
+    clear: both;
+}
+#send-container{
+    display: block;
+    margin: auto;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+#msginput{
+    width: 80.1%;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 34px;
+}
+.btn{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 34px;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 46%;
+    top: 40%;
+    transform: scale(3.0);
+    display: block;
+    margin: auto;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+    <h1>Welcome to 𝒲𝑒𝒾𝓇𝒹𝒞𝒽𝒶𝓉</h1>
+    <p id="nop">Make sure the website loads in http! Connecting to server...</p>
+    <div class="loader" id="loader"></div>
+    <div class="container" id="container">
+    </div>
+    <div class="send" id="send">
+        <form action="#" id="send-container">
+            <input type="text" name="msginput" id="msginput">
+            <button class="btn" type="submit">Send</button>
+    </form>
+    
+</div>
+<script>
+$('#send').hide()
+$('#container').hide()
+</script>
+</body>
+<style type="text/css">.disclaimer { display: none; }</style>
+</html>
